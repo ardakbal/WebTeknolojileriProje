@@ -1,0 +1,94 @@
+  * {
+    box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("images/login.jpg") no-repeat center center fixed; background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    
+    }
+    
+
+    .box {
+      background-color: white;
+      padding: 40px;
+      width: 320px;
+      margin: auto;
+      margin-top: 120px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .box h2 {
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .box input[type="text"],
+    .box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border 0.3s;
+    }
+
+    .box input[type="text"]:focus,
+    .box input[type="password"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .box input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      display: none;
+      background-color: #dc3545;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      animation: slideDown 0.4s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      color: #555;
+      margin-top: auto;
+      box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+    }
