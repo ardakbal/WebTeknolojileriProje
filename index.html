@@ -36,24 +36,33 @@
       color: #555;
       margin-top: 40px;
     }
+    #ardaCarousel .carousel-inner 
+    {
+    max-height: 500px;
+    }
+
+    #ardaCarousel .carousel-item img 
+    {
+      object-fit: contain;
+      height: 500px;
+      width: 150px;
+    }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="https://www.sakarya.edu.tr/" target="_blank">
       Arda Akbal<br><small class="text-muted">Sakarya Üniversitesi</small>
     </a>
 
-    <!-- Hamburger Menü Butonu (EKLENDİ) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
       aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menü İçeriği -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
@@ -64,12 +73,22 @@
         <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li> 
         <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
       </ul>
+
+      <div class="d-flex ms-3">
+          <a class="me-2" href="https://www.linkedin.com/in/ardaakbal" target="_blank" title="LinkedIn">
+            <img src="images/linkedin.png" alt="LinkedIn" style="width: 28px; height: 28px;">
+          </a>
+          <a href="https://github.com/ardakbal" target="_blank" title="GitHub">
+            <img src="images/github.png" alt="GitHub" style="width: 28px; height: 28px;">
+          </a>
+      </div>
+
     </div>
   </div>
 </nav>
 
 
-<div class="container d-flex align-items-center justify-content-center" style="min-height: 90vh;">
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 60vh;">
   <div class="row align-items-center overlay">
         <div class="col-md-4 text-center">
             <img src="images/1.jpg" alt="Profil Fotoğrafı" class="profile-pic">
@@ -82,6 +101,29 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="ardaCarousel" class="carousel slide container mt-4" data-bs-ride="carousel" style="min-height: 70vh;">
+  <div class="carousel-inner rounded-4 shadow">
+    
+    <div class="carousel-item active">
+      <img src="images/2.jpg" class="d-block w-100" alt="arda2">
+    </div>
+    <div class="carousel-item">
+      <img src="images/3.jpg" class="d-block w-100" alt="arda3" style="object-position: 50% 75%">
+    </div>
+    <div class="carousel-item">
+      <img src="images/4.1.jpg" class="d-block w-100" alt="arda4" style="object-position: bottom;">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#ardaCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Önceki</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#ardaCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Sonraki</span>
+  </button>
 </div>
 
 <!-- Hobiler ve Etkinlikler Bölümü -->
