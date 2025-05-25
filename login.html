@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html>
-   <head>
-        <meta charset="UTF-8">
-        <title>
-            Giriş Sayfası
-        </title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+<html lang="tr">
+<head>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Giriş Yap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="https://www.sakarya.edu.tr/" target="_blank">
+      Arda Akbal<br><small class="text-muted">Sakarya Üniversitesi</small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Tecrübelerim</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Eskişehir</a></li>
+        <li class="nav-item"><a class="nav-link " href="miras.html">Estram</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlar.html">İlgi Alanım</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link active" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+  <div class="box">
+    <h2>Giriş Yap</h2>
 
-       
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <div id="errorBox" class="error">
+      Bilgiler yanlış! Lütfen tekrar deneyin.
+    </div>
+
+    <form action="login.php" method="post">
+      <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+      <input type="password" name="password" placeholder="Şifre" required>
+      <input type="submit" value="Giriş Yap">
+    </form>
+  </div>
+
+  <script>
+    // URL'de ?error=1 varsa hatayı göster
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("error") === "1") {
+      document.getElementById("errorBox").style.display = "block";
+    }
+  </script>
+
+  <footer>
+    © 2025 | Arda Akbal
+  </footer>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</body>
 </html>
