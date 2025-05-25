@@ -58,6 +58,16 @@
         <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
       </ul>
+
+       <div class="d-flex ms-3">
+          <a class="me-2" href="https://www.linkedin.com/in/ardaakbal" target="_blank" title="LinkedIn">
+            <img src="images/linkedin.png" alt="LinkedIn" style="width: 28px; height: 28px;">
+          </a>
+          <a href="https://github.com/ardakbal" target="_blank" title="GitHub">
+            <img src="images/github.png" alt="GitHub" style="width: 28px; height: 28px;">
+          </a>
+      </div>
+
     </div>
   </div>
 </nav>
@@ -76,7 +86,8 @@
       "Duman Halimiz Duman",
       "Cem Karaca Islak Islak",
       "Barış Manço Dağlar Dağlar",
-      "Cem Karaca Ceviz Ağacı"
+      "Cem Karaca Ceviz Ağacı",
+      "1411727947"
     ];
 
     const container = document.getElementById("music-container");
@@ -91,14 +102,6 @@
         })
         .catch(err => console.error("Şarkı aranırken hata:", err));
     });
-
-    fetch("https://itunes.apple.com/lookup?id=1411727947")
-      .then(response => response.json())
-      .then(data => {
-        const track = data.results[0];
-        if (track) addSongCard(track);
-      })
-      .catch(err => console.error("Teoman şarkısı çekilirken hata:", err));
 
     function addSongCard(track) {
       const col = document.createElement("div");
