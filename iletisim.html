@@ -1,17 +1,179 @@
 <!DOCTYPE html>
-<html>
-   <head>
-        <meta charset="UTF-8">
-        <title>
-            İletişim
-        </title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim </title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+     body {
+        background: url('images/iletisim1back.jpg') no-repeat center center fixed; background-size: cover;
+        color: white;
+    }
+     footer 
+    {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      color: #555;
+      margin-top: 40px;
+    }
+      input, select, textarea {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  </style>
+</head>
+<body>
 
-    <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="https://www.sakarya.edu.tr/" target="_blank">
+      Arda Akbal<br><small class="text-muted">Sakarya Üniversitesi</small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Tecrübelerim</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Eskişehir</a></li>
+        <li class="nav-item"><a class="nav-link" href="miras.html">Estram</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlar.html">İlgi Alanım</a></li>
+        <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
-       
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+
+<!-- Ana içerik -->
+<div id="app" class="container mt-4 mb-4">
+  <h2>İletişim Formu</h2>
+  <form id="iletisimForm" action="sonuc.php" method="post" @submit.prevent="vueKontrol">
+
+    <div class="mb-3">
+    <label>Ad:</label>
+    <input type="text" class="form-control" name="ad" v-model="form.ad"
+            @keypress="sadeceHarf($event)">
+    </div>
+
+    <div class="mb-3">
+    <label>Soyad:</label>
+    <input type="text" class="form-control" name="soyad" v-model="form.soyad"
+            @keypress="sadeceHarf($event)">
+    </div>
+
+
+    <div class="mb-3">
+      <label>Email:</label>
+      <input type="text" class="form-control" name="email" v-model="form.email">
+    </div>
+
+    <div class="mb-3">
+      <label>Telefon:</label>
+      <input type="text" class="form-control" name="telefon" v-model="form.telefon">
+    </div>
+
+    <div class="mb-3">
+      <label>Cinsiyet:</label><br>
+      <input type="radio" name="cinsiyet" value="Erkek" v-model="form.cinsiyet"> Erkek
+      <input type="radio" name="cinsiyet" value="Kadın" v-model="form.cinsiyet"> Kadın
+    </div>
+
+    <div class="mb-3">
+      <label>Doğum Tarihi:</label>
+      <input type="date" class="form-control" name="dogum" v-model="form.dogum">
+    </div>
+
+    <div class="mb-3">
+      <label>Şehir:</label>
+      <select name="sehir" class="form-control" v-model="form.sehir">
+        <option value="">Seçiniz</option>
+        <option>Ankara</option>
+        <option>İstanbul</option>
+        <option>İzmir</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Mesaj:</label>
+      <textarea class="form-control" name="mesaj" rows="3" v-model="form.mesaj"></textarea>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="kabul" name="kabul" v-model="form.kabul">
+      <label class="form-check-label" for="kabul">Kuralları kabul ediyorum</label>
+    </div>
+
+    <button type="button" class="btn btn-secondary" onclick="temizleForm()">Temizle</button>
+    <button type="submit" class="btn btn-success">Gönder</button>
+  </form>
+</div>
+
+
+  <footer>
+  © 2025 | Arda Akbal
+</footer>
+
+<!-- Vue.js -->
+<script>
+new Vue({
+  el: "#app",
+  data: {
+    form: {
+      ad: '',
+      soyad: '',
+      email: '',
+      telefon: '',
+      cinsiyet: '',
+      dogum: '',
+      sehir: '',
+      mesaj: '',
+      kabul: false
+    }
+  },
+ methods: {
+  vueKontrol() {
+    let mesajlar = [];
+
+    if (this.form.ad === '') mesajlar.push("Ad boş olamaz");
+    if (this.form.soyad === '') mesajlar.push("Soyad boş olamaz");
+    if (!this.form.email.includes('@')) mesajlar.push("Geçersiz email");
+    if (!/^\d+$/.test(this.form.telefon)) mesajlar.push("Telefon sadece rakam olmalı");
+    if (!this.form.cinsiyet) mesajlar.push("Cinsiyet seçilmeli");
+    if (this.form.sehir === '') mesajlar.push("Şehir seçilmeli");
+    if (!this.form.kabul) mesajlar.push("Kurallar kabul edilmeli");
+
+    if (mesajlar.length > 0) {
+      alert("Hatalar:\n" + mesajlar.join("\n"));
+    } else {
+      document.getElementById("iletisimForm").submit();
+    }
+  },
+  sadeceHarf(event) {
+    const char = String.fromCharCode(event.keyCode);
+    const regex = /^[a-zA-ZğüşöçıİĞÜŞÖÇ\s]+$/;
+    if (!regex.test(char)) {
+      event.preventDefault();
+    }
+  }
+}
+
+});
+</script>
+
+<!-- JS ile temizleme -->
+<script>
+function temizleForm() {
+  document.getElementById("iletisimForm").reset();
+  alert("Form sıfırlandı.");
+}
+</script>
+
+</body>
 </html>
