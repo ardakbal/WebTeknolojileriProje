@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Arda Akbal - Mirasımız</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("images/estramback.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    a {
+    text-decoration: none;  /* Alt çizgiyi kaldırır */
+    color: #0d6efd;            /* Yazı rengini mavi yapar */
+    }
+
+
+    .section-title {
+      border-bottom: 3px solid #0d6efd;
+      padding-bottom: 8px;
+      margin-bottom: 30px;
+      color: #000000;
+    }
+    .slider-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px;
+      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .slider-container img {
+      height: 200px;
+      border-radius: 10px;
+      margin-right: 15px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .slider-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      color: #555;
+      margin-top: 40px;
+    }
+   .carousel-inner img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Daha küçük görünmesi için sınırlama */
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+
+</style>
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="https://www.sakarya.edu.tr/" target="_blank">
+      Arda Akbal<br><small class="text-muted">Sakarya Üniversitesi</small>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Tecrübelerim</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Eskişehir</a></li>
+        <li class="nav-item"><a class="nav-link active" href="miras.html">Estram</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlar.html">İlgi Alanım</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- AÇIKLAMA BÖLÜMÜ -->
+<section class="container mt-4" id="estram">
+  <div class="info-card">
+   <h2 class="section-title">
+  <a href="https://www.estram.com.tr/" target="_blank">Estram Nedir?</a>
+</h2>
+
+    <p>Estram, Eskişehir'in Hafif Raylı Sistem Ağını işleten şirketin ismidir. 20 yıldır Eskişehir'de tramvay hatlarını işletir. Bu tramvaylar her ne kadar tarihi bir miras olmasa da Eskişehir'in çağdaş şehir kimliğin oluşmasında büyük bir etkisi olmuştur ve Eskişehir'in sembollerinden biri haline gelmiştir.</p>
+  </div>
+</section>
+
+<div id="estramCarousel1" class="carousel slide container mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner rounded-4 shadow">
+        <div class="carousel-item active">
+            <img src="images/estram3.png" class="d-block w-100" alt="Estram 3" style="object-position: 50% 85%">
+        </div>
+    </div>
+</div>
+
+<section class="container mt-4" id="kulturel_kimlik">
+  <div class="info-card">
+    <h2 class="section-title">Kültürel Kimlik</h2>
+    <p>Eskişehir'de ilk tramvay hattı 24 Aralık 2004 tarihinde açıldı. O günden bugüne kadar toplamda 700 milyon yolcu taşındı. Kentin önemli noktalarını birbine bağlaması, beyaz turuncu renkleriyle, ziliyle dikkat çekmesi, fazla sefer yapması, geniş kullanım kitlesinin olması, turistik yerlerden geçmesi gibi özellikleri Eskişehir'in tramvaylarını daha çok meşhur ediyor ve şehrin kültürel bir kimliği haline getiriyor. </p>
+  </div>
+</section>
+
+<!-- GÖRSEL SLIDER (CAROUSEL) -->
+<div id="estramCarousel2" class="carousel slide container mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner rounded-4 shadow">
+    
+    <div class="carousel-item active">
+      <img src="images/estram6.jpeg" class="d-block w-100" alt="Estram 6">
+    </div>
+    <div class="carousel-item">
+      <img src="images/estram1.png" class="d-block w-100" alt="Estram 1" style="object-position: 50% 75%">
+    </div>
+    <div class="carousel-item">
+      <img src="images/estram4.jpeg" class="d-block w-100" alt="Estram 4" style="object-position: bottom;">
+    </div>
+    <div class="carousel-item">
+      <img src="images/estram5.jpeg" class="d-block w-100" alt="Estram 5">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#estramCarousel2" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Önceki</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#estramCarousel2" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Sonraki</span>
+  </button>
+</div>
+
+<section class="container mt-4" id="cagdas_sehir">
+  <div class="info-card">
+    <h2 class="section-title">Çağdaş Şehir ve Toplumsal Olaylar</h2>
+    <p>Eskişehir'in modern yüzünü yansıtan ESTRAM, bir ulaşım aracı olmanın ötesinde, kentin dinamik ve çağdaş kimliğinin önemli bir simgesi haline gelmiştir. Raylı sistem ağının konforu ve çevre dostu yapısı, şehir içi ulaşımı kolaylaştırmakla kalmayıp, Eskişehir'in çağdaş bir cumhuriyet kenti olmasına da önemli ölçüde katkı sağlamıştır. Aynı zamanda toplumsal duyarlılığın da bir göstergesi olan ESTRAM, Cumhuriyetin 100. yılından 101. yılına kadar süren özel süslemeleriyle şehirde bayram coşkusunu pekiştirirken, milli bayramlarda özenle süslenerek bu kutlamaların görsel bir parçası haline gelmiştir. Bunun yanı sıra, Ukrayna-Rusya Savaşı gibi küresel olaylarda tramvay ekranlarına yansıyan "Yurtta Barış Dünyada Barış" mesajları, Volkan Konak vefat ettikten sonra 1 gün boyunca tramvaylarda Volkan Konak şarkılarının çalınması gibi toplumsal olaylara karşı duyarlılığını sergilemiştir.  Bu yönüyle ESTRAM, sadece bir toplu taşıma aracı değil, aynı zamanda Eskişehir'in sosyal ve kültürel yaşamının da aktif bir parçasıdır. </p>
+  </div>
+</section>
+
+<div id="estramCarousel3" class="carousel slide container mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner rounded-4 shadow">
+    
+    <div class="carousel-item active">
+      <img src="images/estram7.jpg" class="d-block w-100" alt="Estram 7" style="object-position: 50% 75%">
+    </div>
+    <div class="carousel-item">
+      <img src="images/estram8.png" class="d-block w-100" alt="Estram 8" style="object-position: 50% 10%">
+    </div>
+   
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#estramCarousel3" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Önceki</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#estramCarousel3" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    <span class="visually-hidden">Sonraki</span>
+  </button>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2025 | Arda Akbal
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
